@@ -136,9 +136,9 @@ class Scratch3OperatorsBlocks {
         case 'floor': return Math.floor(n);
         case 'ceiling': return Math.ceil(n);
         case 'sqrt': return Math.sqrt(n);
-        case 'sin': return parseFloat(Math.sin((Math.PI * n) / 180).toFixed(10));
-        case 'cos': return parseFloat(Math.cos((Math.PI * n) / 180).toFixed(10));
-        case 'tan': return MathUtil.tan(n);
+        case 'sin': return parseFloat(Math.sin((Math.PI * (n % 360)) / 180).toFixed(10));
+        case 'cos': return parseFloat(Math.cos((Math.PI * (n % 360)) / 180).toFixed(10));
+        case 'tan': return MathUtil.tan(n % 360);
         case 'asin': return (Math.asin(n) * 180) / Math.PI;
         case 'acos': return (Math.acos(n) * 180) / Math.PI;
         case 'atan': return (Math.atan(n) * 180) / Math.PI;
