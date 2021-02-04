@@ -503,6 +503,8 @@ class VirtualMachine extends EventEmitter {
     installTargets (targets, extensions, wholeProject) {
         const extensionPromises = [];
 
+        this.extensionManager.loadExtensionIdSync("Pen");
+        this.extensionManager.loadExtensionIdSync("mooooo");
         extensions.extensionIDs.forEach(extensionID => {
             if (!this.extensionManager.isExtensionLoaded(extensionID)) {
                 const extensionURL = extensions.extensionURLs.get(extensionID) || extensionID;
